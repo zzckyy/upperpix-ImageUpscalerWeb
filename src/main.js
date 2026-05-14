@@ -49,6 +49,32 @@ document.querySelector('#app').innerHTML = `
   </div>
 <section>
 
+<main>
+  <div class="box">
+    <img src="" class="img-box">
+    <h3>Upscale your low-res images</h3>
+    <p>Increase image resolution with our AI upscale image tool while preserving natural details and textures. The system analyzes the photo to understand its shapes, edges, and contrast, using these visual cues to reconstruct details and produce a sharper, clearer result. This is especially useful for photos, digital artwork, product images, or other visuals that need higher resolution and improved clarity.</p>
+  </div>
+
+  <div class="box">
+    <img src="" class="img-box">
+    <h3>Upscale your low-res images</h3>
+    <p>Increase image resolution with our AI upscale image tool while preserving natural details and textures. The system analyzes the photo to understand its shapes, edges, and contrast, using these visual cues to reconstruct details and produce a sharper, clearer result. This is especially useful for photos, digital artwork, product images, or other visuals that need higher resolution and improved clarity.</p>
+  </div>
+
+  <div class="box">
+    <img src="" class="img-box">
+    <h3>Upscale your low-res images</h3>
+    <p>Increase image resolution with our AI upscale image tool while preserving natural details and textures. The system analyzes the photo to understand its shapes, edges, and contrast, using these visual cues to reconstruct details and produce a sharper, clearer result. This is especially useful for photos, digital artwork, product images, or other visuals that need higher resolution and improved clarity.</p>
+  </div>
+
+  <div class="box">
+    <img src="" class="img-box">
+    <h3>Upscale your low-res images</h3>
+    <p>Increase image resolution with our AI upscale image tool while preserving natural details and textures. The system analyzes the photo to understand its shapes, edges, and contrast, using these visual cues to reconstruct details and produce a sharper, clearer result. This is especially useful for photos, digital artwork, product images, or other visuals that need higher resolution and improved clarity.</p>
+  </div>
+</main>
+
 <!-- Footer -->
     <footer class="footer">
         <div class="container">

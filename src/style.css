@@ -6,6 +6,31 @@
   /* padding: 24px; */
 }
 
+main{
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.box{
+  background-color: whitesmoke;
+  padding: 16px;
+  border-radius: 16px;
+  width: 50dvh;
+  text-align: center;
+  margin: auto;
+}
+
+.img-box{
+  width: 100dvh;
+  height: 30dvh;
+  background-color: aqua;
+}
+
 .flex{
   display: flex;
   justify-content: space-between;
