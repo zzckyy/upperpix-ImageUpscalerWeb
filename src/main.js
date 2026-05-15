@@ -35,13 +35,13 @@ document.querySelector('#app').innerHTML = `
 
     <div class="image-preview-container">
       <span>
-      <p class="text-center">Original</p>
-      <img src="" class="image-preview">
+        <p class="text-center">Original</p>
+        <img src="" class="image-preview">
       </span>
 
       <span>
-      <p class="text-center">Upscaled</p>
-      <img src="" class="image-preview">
+        <p class="text-center">Upscaled</p>
+        <img src="" class="image-preview">
       </span>
     </div>
     
