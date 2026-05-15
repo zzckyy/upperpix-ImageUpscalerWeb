@@ -23,6 +23,10 @@ main{
   gap: 12px;
 }
 
+.nav-btn-container{
+  display: block;
+}
+
 .box{
   background-color: var(--fg);
   padding: 16px;
@@ -125,5 +129,17 @@ main{
 
   .hero-left{
     text-align: center;
+  }
+
+  .hero-section{
+    display: none;
+  }
+
+  .box{
+    width: 40dvh;
+  }
+
+  .nav-btn-container{
+    display: none;
   }
 }

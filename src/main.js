@@ -16,7 +16,7 @@ document.querySelector('#app').innerHTML = `
     </a>
     </div>
     
-    <div>
+    <div class="nav-btn-container">
       <button>Upscale</button>
       <button>Low Light</button>
       <button>Retouch</button>
