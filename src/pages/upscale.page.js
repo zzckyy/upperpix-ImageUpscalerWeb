@@ -33,7 +33,8 @@ document.querySelector("#app").innerHTML = /*html */ `
         <div class="jumbotron">
             <div class="input-container">
                 <p>ORIGINAL</p>
-                <input type="file" accept="image/*" id="image-input" class="input" placeholder="">Upload your image here
+                <input type="file" accept="image/*" id="image-input" class="input" placeholder="">
+                <label for="image-input" id="label-input" class="label">Upload your image here</label>
             </div>
             
             <div class="output-container">
@@ -45,3 +46,17 @@ document.querySelector("#app").innerHTML = /*html */ `
 
     </section>
 `
+
+const input = document.querySelector('#image-input');
+const label = document.querySelector('#label-input')
+
+input.addEventListener('change', (e) =>{
+    const files = e.target.files;
+    if(files.length > 0){
+        label.textContent = `${files[0].name}`
+    }
+
+    else{
+        label.textContent = "Upload your image here"
+    }
+})

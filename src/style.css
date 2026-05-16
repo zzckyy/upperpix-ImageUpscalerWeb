@@ -150,6 +150,7 @@ main {
   background-repeat: no-repeat;
   background-clip:border-box;
   background-size: 80%;
+  color: transparent;
 }
 
 input[type="file"]::file-selector-button {
@@ -165,6 +166,11 @@ input[type="file"]::file-selector-button {
 .image-output{
     width: 30dvh;
     height: 30dvh;
+}
+
+.label{
+    text-align: center;
+    max-width: 30dvh;
 }
 
 .footer {
