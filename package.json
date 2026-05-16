@@ -12,6 +12,7 @@
     "vite": "^8.0.12"
   },
   "dependencies": {
-    "milligram": "^1.4.1"
+    "milligram": "^1.4.1",
+    "upscaler": "^1.0.0"
   }
 }

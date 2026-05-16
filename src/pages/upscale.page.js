@@ -52,8 +52,14 @@ const label = document.querySelector('#label-input')
 
 input.addEventListener('change', (e) =>{
     const files = e.target.files;
+    const file = files[0]
+    input.style.backgroundImage = "url(files[0])"
+
+    const url = URL.createObjectURL(file);
+    input.style.backgroundImage = `url(${url})`;
+    
     if(files.length > 0){
-        label.textContent = `${files[0].name}`
+        label.textContent = `${file.name}`
     }
 
     else{
