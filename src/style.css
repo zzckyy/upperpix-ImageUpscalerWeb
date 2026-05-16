@@ -1,111 +1,119 @@
-:root{
-  --bg: white;
-  --fg: whitesmoke;
-  --muted: grey;
-  --accent1: blueviolet;
+:root {
+    --bg: white;
+    --fg: whitesmoke;
+    --muted: grey;
+    --accent1: blueviolet;
 }
 
-#app{
-  /* padding: 24px; */
+#app {
+    /* padding: 24px; */
 }
 
-.brand{
-  color: blueviolet !important;
+a {
+    cursor: pointer;
 }
 
-main{
-  margin-top: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+.brand {
+    color: var(--accent1) !important;
 }
 
-.nav-btn-container{
-  display: block;
+main {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.box{
-  background-color: var(--fg);
-  padding: 16px;
-  border-radius: 16px;
-  min-width: 10dvh;
-  max-width: 50dvh;
-  text-align: center;
-  margin: auto;
-  box-shadow: 4px 4px 16px var(--muted);
-  transition: transform 0.2s ease-in-out; 
-  
+.nav-btn-container {
+    display: block;
 }
 
-.box:hover{
-  transform: translateY(-10px);
+.box {
+    background-color: var(--fg);
+    padding: 16px;
+    border-radius: 16px;
+    min-width: 10dvh;
+    max-width: 50dvh;
+    text-align: center;
+    margin: auto;
+    box-shadow: 4px 4px 16px var(--muted);
+    transition: transform 0.2s ease-in-out;
 }
 
-.img-box{
-  width: 100dvh;
-  height: 30dvh;
-  background-color: var(--accent1);
-  border-radius: 8px;
-  
+.box:hover {
+    transform: translateY(-10px);
 }
 
-.flex{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.box-footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--accent1);
+    padding-top: 4px;
 }
 
-.text-center{
-  text-align: center;
+.img-box {
+    width: 100dvh;
+    height: 30dvh;
+    background-color: var(--accent1);
+    border-radius: 8px;
 }
 
-.hero-left{
-  text-align: end;
-  width: 50dvh;
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hero{
-  margin: auto;
-  margin-top: 12px;
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 16px;
-  background-color: var(--bg);
-  /* max-width: 80dvh; */
-  /* min-height: 100vh; */
-  gap: 12px;
-  border-radius: 16px;
-  flex: 1;
+.text-center {
+    text-align: center;
 }
 
-.hero-section{
-  display: block;
+.hero-left {
+    text-align: end;
+    width: 50dvh;
 }
 
-.image-preview{
-  width: 30dvh;
-  height: 30dvh;
-  background-color: var(--accent1);
-  border-radius: 8px;
-  border: none;
-  
+.hero {
+    margin: auto;
+    margin-top: 12px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px;
+    background-color: var(--bg);
+    /* max-width: 80dvh; */
+    /* min-height: 100vh; */
+    gap: 12px;
+    border-radius: 16px;
+    flex: 1;
 }
 
-.image-preview-container{
-  display: flex;
-  gap: 12px;
-  /* background-color: rgb(236, 236, 236); */
-  padding: 16px;
-  border-radius: 8px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+.hero-section {
+    display: block;
+}
+
+.image-preview {
+    width: 30dvh;
+    height: 30dvh;
+    background-color: var(--accent1);
+    border-radius: 8px;
+    border: none;
+}
+
+.image-preview-container {
+    display: flex;
+    gap: 12px;
+    /* background-color: rgb(236, 236, 236); */
+    padding: 16px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .footer {
@@ -120,26 +128,25 @@ main{
     margin-bottom: 0;
 }
 
+@media (max-width: 600px) {
+    .image-preview {
+        width: 15dvh;
+        height: 15dvh;
+    }
 
-@media (max-width: 600px){
-  .image-preview{
-    width: 15dvh;
-    height: 15dvh;
-  }
+    .hero-left {
+        text-align: center;
+    }
 
-  .hero-left{
-    text-align: center;
-  }
+    .hero-section {
+        display: none;
+    }
 
-  .hero-section{
-    display: none;
-  }
+    .box {
+        width: 40dvh;
+    }
 
-  .box{
-    width: 40dvh;
-  }
-
-  .nav-btn-container{
-    display: none;
-  }
+    .nav-btn-container {
+        display: none;
+    }
 }
