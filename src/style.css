@@ -31,6 +31,7 @@ main {
     display: block;
 }
 
+
 .box {
     background-color: var(--fg);
     padding: 16px;
@@ -53,6 +54,17 @@ main {
     border-top: 2px solid var(--accent1);
     padding-top: 4px;
 }
+
+.jumbotron{
+    background-color: var(--bg);
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
 
 .img-box {
     width: 100dvh;
@@ -114,6 +126,45 @@ main {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+}
+
+.output-container, .input-container{
+    display: flex;
+    flex-direction: column;
+    height: 50dvh;
+    background-color: var(--bg);
+    padding: 2rem;
+    text-align: center;
+}
+
+.input{
+    width: 30dvh;
+    height: 30dvh;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid var(--accent1);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-image: url(assets/hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip:border-box;
+  background-size: 80%;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--bg);
+  /* border: 1px solid #ddd; */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+
+.image-output{
+    width: 30dvh;
+    height: 30dvh;
 }
 
 .footer {

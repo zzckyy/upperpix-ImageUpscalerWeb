@@ -62,7 +62,7 @@ document.querySelector("#app").innerHTML = /*html */ `
           </p>
           <div class="box-footer">
               <button class="box-btn">Upscale</button>
-              <a>Try it</a>
+              <a href="src/pages/html/upscale.page.html">Try it</a>
           </div>
         </div>
 
