@@ -1,5 +1,6 @@
 import "../style.css";
 import "milligram";
+import { removeBackground } from "@imgly/background-removal";
 
 const brand = "Upperpix";
 
@@ -23,7 +24,7 @@ document.querySelector("#app").innerHTML = /*html */ `
 
     <section class="">
         <div class="hero">
-            <h1 class="brand">LOW LIGHT</h1>
+            <h1 class="brand">RETOUCH</h1>
         </div>
         <div class="jumbotron">
             <div class="input-container">
@@ -33,7 +34,7 @@ document.querySelector("#app").innerHTML = /*html */ `
             </div>
             
             <div class="output-container">
-                <p>ENHANCED</p>
+                <p>REMOVED BG</p>
                 <div class="output-skeleton" id="image-output"></div>
                 <a id="download"><button>Download Image</button></a>
             </div>
@@ -56,6 +57,18 @@ const label = document.querySelector('#label-input');
 const output = document.querySelector('#image-output');
 const downloadBtn = document.querySelector('#download');
 
+function updateProgress(percent, status = "") {
+    output.innerHTML = `
+        <div class="processing">
+            <p>Processing... ${percent}%</p>
+            ${status ? `<p style="font-size:0.8em;opacity:0.7">${status}</p>` : ""}
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: ${percent}%"></div>
+            </div>
+        </div>
+    `;
+}
+
 input.addEventListener("change", async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -67,40 +80,22 @@ input.addEventListener("change", async (e) => {
     label.textContent = file.name;
     input.style.backgroundImage = `url(${url})`;
     downloadBtn.style.display = "none";
-    output.innerHTML = `<div class="processing"><p>Processing...</p></div>`;
-
-    const image = await new Promise((res, rej) => {
-        const img = new Image();
-        img.onload = () => res(img);
-        img.onerror = rej;
-        img.src = url;
-    });
+    updateProgress(0, "Loading model...");
 
     try {
-        const canvas = document.createElement("canvas");
-        canvas.width = image.naturalWidth;
-        canvas.height = image.naturalHeight;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(image, 0, 0);
+        const result = await removeBackground(file, {  // ← langsung pakai file, no resize
+            progress: (key, current, total) => {
+                const percent = Math.round((current / total) * 100);
+                const status = key.includes("fetch") ? "Downloading model..." : "Removing background...";
+                updateProgress(percent, status);
+            },
+        });
 
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
+        const resultUrl = URL.createObjectURL(result);
 
-        const gamma = 0.5;
-        const brightness = 30;
-
-        for (let i = 0; i < data.length; i += 4) {
-            data[i]     = Math.min(255, Math.pow(data[i] / 255, gamma) * 255 + brightness);
-            data[i + 1] = Math.min(255, Math.pow(data[i + 1] / 255, gamma) * 255 + brightness);
-            data[i + 2] = Math.min(255, Math.pow(data[i + 2] / 255, gamma) * 255 + brightness);
-        }
-
-        ctx.putImageData(imageData, 0, 0);
-        const enhancedImage = canvas.toDataURL("image/jpeg", 0.92);
-
-        output.innerHTML = `<img src="${enhancedImage}" class="image-output"/>`;
-        downloadBtn.href = enhancedImage;
-        downloadBtn.download = "enhanced.jpg";
+        output.innerHTML = `<img src="${resultUrl}" class="image-output"/>`;
+        downloadBtn.href = resultUrl;
+        downloadBtn.download = "removed-bg.png";
         downloadBtn.style.display = "block";
 
     } catch (err) {

@@ -12,6 +12,7 @@
     "vite": "^8.0.12"
   },
   "dependencies": {
+    "@imgly/background-removal": "^1.7.0",
     "milligram": "^1.4.1"
   }
 }

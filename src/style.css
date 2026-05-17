@@ -87,11 +87,12 @@ main {
 .jumbotron{
     background-color: var(--bg);
     max-width: 100%;
-    margin: auto;
+    margin-bottom: 24px ;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
+    padding: 8px;
 }
 
 
@@ -180,8 +181,12 @@ li{
 .output-container, .input-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 50dvh;
-    background-color: var(--bg);
+    width: 50dvh;
+    background-color: var(--fg);
+    border-radius: 24px;
     padding: 2rem;
     text-align: center;
 }
@@ -198,7 +203,7 @@ li{
   background-position: center;
   background-repeat: no-repeat;
   background-clip:border-box;
-  background-size: 90%;
+  background-size: cover;
   color: transparent;
 }
 
@@ -213,7 +218,9 @@ input[type="file"]::file-selector-button {
 }
 
 .image-output{
-    max-width: 50vh;
+    max-width: 40vh;
+    max-height: 30vh;
+    object-fit: fill;
     border-radius: 16px;
 }
 
