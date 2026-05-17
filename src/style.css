@@ -163,6 +163,8 @@ li{
     background-color: var(--accent1);
     border-radius: 24px;
     border: none;
+    /* background-size: cover; */
+    object-fit: cover;
 }
 
 .image-preview-container {

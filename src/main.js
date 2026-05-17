@@ -33,27 +33,21 @@ document.querySelector("#app").innerHTML = /*html */ `
       <div class="image-preview-container">
         <span>
           <p class="text-center">Original</p>
-          <img src="src/assets/javascript.svg" class="image-preview" />
+          <img src="src/assets/img/preview.jpg" class="image-preview" />
         </span>
 
         <span>
           <p class="text-center">Upscaled</p>
-          <img src="src/assets/javascript.svg" class="image-preview" />
+          <img src="src/assets/img/upscaled.png" class="image-preview" />
         </span>
       </div>
     </section>
       <main>
         <div class="box">
-          <img src="src/assets/javascript.svg" class="img-box" />
-          <h3>Upscale your low-res images</h3>
+          <img src="src/assets/img/cat.jpg" class="img-box" />
+          <h3>Upscaler</h3>
           <p>
-            Increase image resolution with our AI upscale image tool while
-            preserving natural details and textures. The system analyzes the
-            photo to understand its shapes, edges, and contrast, using these
-            visual cues to reconstruct details and produce a sharper, clearer
-            result. This is especially useful for photos, digital artwork,
-            product images, or other visuals that need higher resolution and
-            improved clarity.
+            Enlarge your photos without the blurry, pixelated results typical of standard resizing. Edges stay crisp, textures remain intact, and fine details are preserved — so your image looks sharp and clear even at twice the original size.
           </p>
           <div class="box-footer">
               <a href="src/pages/html/upscale.page.html">Upscale my image</a>
@@ -61,10 +55,10 @@ document.querySelector("#app").innerHTML = /*html */ `
         </div>
 
         <div class="box">
-          <img src="src/assets/javascript.svg" class="img-box" />
-          <h3>Enhance Low-Light images</h3>
+          <img src="src/assets/img/lowlight.jpg" class="img-box" />
+          <h3>Low-Light Enhancer</h3>
           <p>
-            Brighten and restore photos taken in dark or poorly lit conditions using our AI-powered low-light enhancement tool. The system intelligently lifts shadows, recovers hidden details, and balances exposure without washing out colors or introducing noise. Whether it's a night shot, an indoor photo, or an underexposed image, the result is a naturally bright and perfect lighting.
+            Brighten and restore photos taken in dark or poorly lit conditions. Shadows are lifted, hidden details are recovered, and exposure is balanced — giving your photo a natural, well-lit look without washing out colors.
           </p>
           <div class="box-footer">
               <a href="src/pages/html/lowlight.page.html">Low-Light Enhancement</a>
@@ -72,11 +66,10 @@ document.querySelector("#app").innerHTML = /*html */ `
         </div>
 
         <div class="box">
-          <img src="src/assets/javascript.svg" class="img-box" />
-          <h3>Enhance Low-Light images</h3>
+          <img src="src/assets/img/catbgblack.jpg" class="img-box" />
+          <h3>Background Remover</h3>
           <p>
-            Brighten and restore photos taken in dark or poorly lit conditions using our AI-powered low-light enhancement tool. The system intelligently lifts shadows, recovers hidden details, and balances exposure without washing out colors or introducing noise. Whether it's a night shot, an indoor photo, or an underexposed image, the result is a naturally bright and perfect lighting.
-          </p>
+            Automatically detect and remove the background from any photo with precision. Whether it's a portrait, product shot, or object, the result is a clean, transparent cutout ready to be placed on any background you need.
           <div class="box-footer">
               <a href="src/pages/html/bgremove.page.html">Low-Light Enhancement</a>
           </div>
