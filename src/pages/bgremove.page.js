@@ -1,26 +1,13 @@
 import "../style.css";
 import "milligram";
+import { Navbar } from "../component/navbar";
 import { removeBackground } from "@imgly/background-removal";
 
 const brand = "Upperpix";
 
 document.querySelector("#app").innerHTML = /*html */ `
-<nav class="navigation">
-    <div class="container navigation-container flex">
-      <div>
-        <a class="navigation-title" href="/">
-          <strong>${brand}</strong>
-        </a>
-      </div>
 
-      <div class="nav-btn-container">
-        <button>Upscale</button>
-        <button>Low Light</button>
-        <button>Retouch</button>
-        <button>Denoise</button>
-      </div>
-    </div>
-  </nav>
+    ${Navbar("bgremove")}
 
     <section class="">
         <div class="hero">

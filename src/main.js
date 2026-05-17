@@ -17,10 +17,9 @@ document.querySelector("#app").innerHTML = /*html */ `
       </div>
 
       <div class="nav-btn-container">
-        <button>Upscale</button>
-        <button>Low Light</button>
-        <button>Retouch</button>
-        <button>Denoise</button>
+        <a href="src/pages/html/upscale.page.html"><button>Upscale</button></a>
+        <a href="src/pages/html/lowlight.page.html"><button>Low-Light</button></a>
+        <a href="src/pages/html/bgremove.page.html"><button>Remove BG</button></a>
       </div>
     </div>
   </nav>
