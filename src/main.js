@@ -35,12 +35,12 @@ document.querySelector("#app").innerHTML = /*html */ `
       <div class="image-preview-container">
         <span>
           <p class="text-center">Original</p>
-          <img src="" class="image-preview" />
+          <img src="src/assets/javascript.svg" class="image-preview" />
         </span>
 
         <span>
           <p class="text-center">Upscaled</p>
-          <img src="" class="image-preview" />
+          <img src="src/assets/javascript.svg" class="image-preview" />
         </span>
       </div>
     </div>
@@ -49,7 +49,7 @@ document.querySelector("#app").innerHTML = /*html */ `
     <section>
       <main>
         <div class="box">
-          <img src="" class="img-box" />
+          <img src="src/assets/javascript.svg" class="img-box" />
           <h3>Upscale your low-res images</h3>
           <p>
             Increase image resolution with our AI upscale image tool while
@@ -61,55 +61,21 @@ document.querySelector("#app").innerHTML = /*html */ `
             improved clarity.
           </p>
           <div class="box-footer">
-              <button class="box-btn">Upscale</button>
-              <a href="src/pages/html/upscale.page.html">Try it</a>
+              <a href="src/pages/html/upscale.page.html">Upscale my image</a>
           </div>
         </div>
 
         <div class="box">
-          <img src="" class="img-box" />
-          <h3>Upscale your low-res images</h3>
+          <img src="src/assets/javascript.svg" class="img-box" />
+          <h3>Enhance Low-Light images</h3>
           <p>
-            Increase image resolution with our AI upscale image tool while
-            preserving natural details and textures. The system analyzes the
-            photo to understand its shapes, edges, and contrast, using these
-            visual cues to reconstruct details and produce a sharper, clearer
-            result. This is especially useful for photos, digital artwork,
-            product images, or other visuals that need higher resolution and
-            improved clarity.
+            Brighten and restore photos taken in dark or poorly lit conditions using our AI-powered low-light enhancement tool. The system intelligently lifts shadows, recovers hidden details, and balances exposure without washing out colors or introducing noise. Whether it's a night shot, an indoor photo, or an underexposed image, the result is a naturally bright and perfect lighting.
           </p>
-          <button class="box-btn">Upscale</button>
+          <div class="box-footer">
+              <a href="src/pages/html/upscale.page.html">Low-Light Enhancement</a>
+          </div>
         </div>
-
-        <div class="box">
-          <img src="" class="img-box" />
-          <h3>Upscale your low-res images</h3>
-          <p>
-            Increase image resolution with our AI upscale image tool while
-            preserving natural details and textures. The system analyzes the
-            photo to understand its shapes, edges, and contrast, using these
-            visual cues to reconstruct details and produce a sharper, clearer
-            result. This is especially useful for photos, digital artwork,
-            product images, or other visuals that need higher resolution and
-            improved clarity.
-          </p>
-          <button class="box-btn">Upscale</button>
-        </div>
-
-        <div class="box">
-          <img src="" class="img-box" />
-          <h3>Upscale your low-res images</h3>
-          <p>
-            Increase image resolution with our AI upscale image tool while
-            preserving natural details and textures. The system analyzes the
-            photo to understand its shapes, edges, and contrast, using these
-            visual cues to reconstruct details and produce a sharper, clearer
-            result. This is especially useful for photos, digital artwork,
-            product images, or other visuals that need higher resolution and
-            improved clarity.
-          </p>
-          <button class="box-btn">Upscale</button>
-        </div>
+        
       </main>
 
       <!-- Footer -->
