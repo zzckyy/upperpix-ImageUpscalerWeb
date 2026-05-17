@@ -43,10 +43,7 @@ document.querySelector("#app").innerHTML = /*html */ `
           <img src="src/assets/javascript.svg" class="image-preview" />
         </span>
       </div>
-    </div>
-
-    <div></div>
-    <section>
+    </section>
       <main>
         <div class="box">
           <img src="src/assets/javascript.svg" class="img-box" />
@@ -72,7 +69,7 @@ document.querySelector("#app").innerHTML = /*html */ `
             Brighten and restore photos taken in dark or poorly lit conditions using our AI-powered low-light enhancement tool. The system intelligently lifts shadows, recovers hidden details, and balances exposure without washing out colors or introducing noise. Whether it's a night shot, an indoor photo, or an underexposed image, the result is a naturally bright and perfect lighting.
           </p>
           <div class="box-footer">
-              <a href="src/pages/html/upscale.page.html">Low-Light Enhancement</a>
+              <a href="src/pages/html/lowlight.page.html">Low-Light Enhancement</a>
           </div>
         </div>
         
@@ -87,7 +84,5 @@ document.querySelector("#app").innerHTML = /*html */ `
             </div>
           </div>
         </div>
-      </footer>
     </section>
-  </section>
 `;

@@ -1,7 +1,11 @@
 import "../style.css";
+import javascriptLogo from "../assets/javascript.svg";
+import viteLogo from "../assets/vite.svg";
+import heroImg from "../assets/hero.png";
 import "milligram";
 
 const brand = "Upperpix";
+const hero = "Make your photo more live with";
 
 document.querySelector("#app").innerHTML = /*html */ `
 <nav class="navigation">
@@ -38,6 +42,7 @@ document.querySelector("#app").innerHTML = /*html */ `
                 <a id="download"><button>Download Image</button></a>
             </div>
         </div>
+
     </section>
 
     <div class="info">
@@ -55,36 +60,7 @@ const input = document.querySelector('#image-input');
 const label = document.querySelector('#label-input');
 const output = document.querySelector('#image-output');
 const downloadBtn = document.querySelector('#download');
-
-// Sharpen kernel (unsharp mask 3x3)
-function applySharpening(ctx, w, h) {
-    const imageData = ctx.getImageData(0, 0, w, h);
-    const data = imageData.data;
-    const out = new Uint8ClampedArray(data);
-
-    const kernel = [
-         0, -1,  0,
-        -1,  5, -1,
-         0, -1,  0
-    ];
-
-    for (let y = 1; y < h - 1; y++) {
-        for (let x = 1; x < w - 1; x++) {
-            for (let c = 0; c < 3; c++) { // R, G, B
-                let val = 0;
-                for (let ky = -1; ky <= 1; ky++) {
-                    for (let kx = -1; kx <= 1; kx++) {
-                        const px = ((y + ky) * w + (x + kx)) * 4 + c;
-                        val += data[px] * kernel[(ky + 1) * 3 + (kx + 1)];
-                    }
-                }
-                out[(y * w + x) * 4 + c] = Math.min(255, Math.max(0, val));
-            }
-        }
-    }
-
-    ctx.putImageData(new ImageData(out, w, h), 0, 0);
-}
+const outputContainer = document.querySelector('.output-container')
 
 input.addEventListener("change", async (e) => {
     const file = e.target.files[0];
@@ -99,6 +75,7 @@ input.addEventListener("change", async (e) => {
     downloadBtn.style.display = "none";
     output.innerHTML = `<div class="processing"><p>Processing...</p></div>`;
 
+    // ← Tunggu image beneran load dulu sebelum apapun
     const image = await new Promise((res, rej) => {
         const img = new Image();
         img.onload = () => res(img);
@@ -106,28 +83,65 @@ input.addEventListener("change", async (e) => {
         img.src = url;
     });
 
-    // Upscale 2x via canvas
-    const SCALE = 2;
-    const w = image.naturalWidth * SCALE;
-    const h = image.naturalHeight * SCALE;
-
+    // Resize ke max 512px
     const canvas = document.createElement("canvas");
+    const MAX_SIZE = 512;
+    let w = image.naturalWidth;
+    let h = image.naturalHeight;
+
+    console.log("Original size:", w, h); // ← cek dulu
+
+    if (w > MAX_SIZE || h > MAX_SIZE) {
+        const ratio = Math.min(MAX_SIZE / w, MAX_SIZE / h);
+        w = Math.round(w * ratio);
+        h = Math.round(h * ratio);
+    }
+
+    console.log("Resized to:", w, h); // ← pastiin udah 512 kebawah
+
     canvas.width = w;
     canvas.height = h;
-    const ctx = canvas.getContext("2d");
+    canvas.getContext("2d").drawImage(image, 0, 0, w, h);
 
-    // imageSmoothingQuality high = bilinear/bicubic interpolation
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = "high";
-    ctx.drawImage(image, 0, 0, w, h);
+    const resized = new Image();
+    await new Promise((res) => {
+        resized.onload = res;
+        resized.src = canvas.toDataURL();
+    });
 
-    // Apply sharpening biar nggak blur setelah di-upscale
-    applySharpening(ctx, w, h);
+    try {
+    // Ganti upscaler.upscale() dengan canvas brightness enhancement
+    const outCanvas = document.createElement("canvas");
+    outCanvas.width = resized.naturalWidth;
+    outCanvas.height = resized.naturalHeight;
+    const ctx = outCanvas.getContext("2d");
+    ctx.drawImage(resized, 0, 0);
 
-    const result = canvas.toDataURL("image/jpeg", 0.92);
+    // Ambil pixel data
+    const imageData = ctx.getImageData(0, 0, outCanvas.width, outCanvas.height);
+    const data = imageData.data;
 
-    output.innerHTML = `<img src="${result}" class="image-output"/>`;
-    downloadBtn.href = result;
-    downloadBtn.download = "upscaled.png";
+    // Gamma correction + brightness boost (simulasi low-light enhancement)
+    const gamma = 0.5;       // < 1 = brighten shadows
+    const brightness = 30;   // tambahan brightness flat
+
+    for (let i = 0; i < data.length; i += 4) {
+        data[i]     = Math.min(255, Math.pow(data[i] / 255, gamma) * 255 + brightness);     // R
+        data[i + 1] = Math.min(255, Math.pow(data[i + 1] / 255, gamma) * 255 + brightness); // G
+        data[i + 2] = Math.min(255, Math.pow(data[i + 2] / 255, gamma) * 255 + brightness); // B
+        // Alpha [i+3] dibiarkan
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    const enhancedImage = outCanvas.toDataURL("image/png");
+
+    output.innerHTML = `<img src="${enhancedImage}" class="image-output"/>`;
+    downloadBtn.href = enhancedImage;
+    downloadBtn.download = "enhanced.png";
     downloadBtn.style.display = "block";
+
+} catch (err) {
+    output.innerHTML = `<div class="processing"><p>❌ Error: ${err.message}</p></div>`;
+    console.error(err);
+}
 });
