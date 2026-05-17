@@ -116,7 +116,9 @@ main {
 
 .hero-left {
     text-align: end;
-    width: 50dvh;
+    width: 40dvh;
+    margin-top: 5dvh;
+
 }
 
 .hero {

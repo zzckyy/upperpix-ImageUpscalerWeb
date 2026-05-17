@@ -5,7 +5,7 @@ import heroImg from "./assets/hero.png";
 import "milligram";
 
 const brand = "Upperpix";
-const hero = "Make your photo more live with";
+const hero = `Make Your Photos Come Alive with`;
 
 document.querySelector("#app").innerHTML = /*html */ `
   <nav class="navigation">
@@ -28,7 +28,6 @@ document.querySelector("#app").innerHTML = /*html */ `
     <div class="hero">
       <div class="hero-left">
         <h1>${hero} <span class="brand">${brand}</span></h1>
-        <p class="hero-section">lorem ipsum dolor sit amet.</p>
       </div>
 
       <div class="image-preview-container">
