@@ -1,20 +1,21 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig(({ command }) => {
-  return {
-    base: command === 'build'
-      ? '/upperpix-ImageUpscalerWeb/' // pas deploy
-      : '/upperpix/', // pas dev
+    return {
+        base: command === 'build'
+            ? '/upperpix-ImageUpscalerWeb/' // pas deploy
+            : '/upperpix/', // pas dev
 
-    build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        lowlight: resolve(__dirname, 'lowlight.page.html'),
-        upscale: resolve(__dirname, 'upscale.page.html'),
-        bgremove: resolve(__dirname, 'bgremove.page.html'),
-      },
-    },
-  },
-  }
+        // resolve pages
+        build: {
+            rollupOptions: {
+                input: {
+                    main: resolve(__dirname, 'index.html'),
+                    lowlight: resolve(__dirname, 'lowlight.page.html'),
+                    upscale: resolve(__dirname, 'upscale.page.html'),
+                    bgremove: resolve(__dirname, 'bgremove.page.html'),
+                },
+            },
+        }
+    }
 })
