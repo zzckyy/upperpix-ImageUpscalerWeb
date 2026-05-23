@@ -1,6 +1,5 @@
 (function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();function e(e=``){return`
-    <nav class="navigation">
-        <div class="container navigation-container flex">
+    <nav class="container flex">
             <div>
                 <a class="navigation-title" href="/">
                     <strong>Upperpix</strong>
@@ -21,9 +20,20 @@
             </div>
 
             <button class="menu" id="menu" onclick="">MENU</button>
-        </div>
     </nav>
-    `}var t=`/upperpix/assets/preview-BnZX9DRQ.jpg`,n=`/upperpix/assets/upscaled-B9FMcAT5.png`,r=`/upperpix/assets/cat-CRW63B4g.jpg`,i=`/upperpix/assets/lowlight-Cz1i1-Ih.jpg`,a=`/upperpix/assets/catbgblack-CGSXW21q.jpg`,o=`Upperpix`,s=`Make Your Photos Come Alive with`;document.querySelector(`#app`).innerHTML=`
+
+    <div class="menuDiv hidden" id="menuDiv">
+        <a href="/upperpix/upscale.page.html">
+                    <button class="${e===`upscale`?`active`:``}">Upscale</button>
+                </a>
+                <a href="/upperpix/lowlight.page.html">
+                    <button class="${e===`lowlight`?`active`:``}">Low-Light</button>
+                </a>
+                <a href="/upperpix/bgremove.page.html">
+                    <button class="${e===`bgremove`?`active`:``}">Remove BG</button>
+                </a>
+    </div>
+    `}document.addEventListener(`click`,e=>{let t=document.getElementById(`menuDiv`);e.target.id===`menu`&&t.classList.toggle(`hidden`)});var t=`/upperpix/assets/preview-BnZX9DRQ.jpg`,n=`/upperpix/assets/upscaled-B9FMcAT5.png`,r=`/upperpix/assets/cat-CRW63B4g.jpg`,i=`/upperpix/assets/lowlight-Cz1i1-Ih.jpg`,a=`/upperpix/assets/catbgblack-CGSXW21q.jpg`,o=`Upperpix`,s=`Make Your Photos Come Alive with`;document.querySelector(`#app`).innerHTML=`
   ${e()}
 
   <section class="">
@@ -52,7 +62,7 @@
             Enlarge your photos without the blurry, pixelated results typical of standard resizing. Your image will looks sharp and clear even at twice the original size without sacrifies the quality.
           </p>
           <div class="box-footer">
-              <a href="src/pages/html/upscale.page.html">Upscale my image</a>
+              <a href="upscale.page.html">Upscale my image</a>
           </div>
         </div>
 
@@ -63,7 +73,7 @@
             Brighten and restore photos taken in dark or poorly lit conditions. Shadows are lifted, hidden details are recovered, and exposure is balanced — giving your photo a natural, well-lit look without washing out colors.
           </p>
           <div class="box-footer">
-              <a href="src/pages/html/lowlight.page.html">Low-Light Enhancement</a>
+              <a href="lowlight.page.html">Low-Light Enhancement</a>
           </div>
         </div>
 
@@ -73,7 +83,7 @@
           <p>
             Automatically detect and remove the background from any photo with precision. Whether it's a portrait, product shot, or object, the result is a clean, transparent cutout ready to be placed on any background you need.
           <div class="box-footer">
-              <a href="src/pages/html/bgremove.page.html">Low-Light Enhancement</a>
+              <a href="bgremove.page.html">Low-Light Enhancement</a>
           </div>
         </div>
 
