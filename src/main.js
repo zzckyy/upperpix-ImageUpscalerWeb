@@ -5,6 +5,13 @@ import heroImg from "./assets/hero.png";
 import "milligram";
 import Navbar from "./component/navbar.js"
 
+//gambar
+import previewImg from "./assets/img/preview.jpg"
+import upscaledImg from "./assets/img/upscaled.png"
+import catImg from "./assets/img/cat.jpg"
+import lowlightImg from "./assets/img/lowlight.jpg"
+import catblackbgImg from "./assets/img/catbgblack.jpg"
+
 const brand = "Upperpix";
 const hero = `Make Your Photos Come Alive with`;
 
@@ -20,18 +27,18 @@ document.querySelector("#app").innerHTML = /*html */ `
       <div class="image-preview-container">
         <span>
           <p class="text-center">Original</p>
-          <img src="src/assets/img/preview.jpg" class="image-preview" />
+          <img src="${previewImg}" class="image-preview" />
         </span>
 
         <span>
           <p class="text-center">Upscaled</p>
-          <img src="src/assets/img/upscaled.png" class="image-preview" />
+          <img src="${upscaledImg}" class="image-preview" />
         </span>
       </div>
     </section>
       <main>
         <div class="box">
-          <img src="src/assets/img/cat.jpg" class="img-box" />
+          <img src="${catImg}" class="img-box" />
           <h3>Upscaler</h3>
           <p>
             Enlarge your photos without the blurry, pixelated results typical of standard resizing. Your image will looks sharp and clear even at twice the original size without sacrifies the quality.
@@ -42,7 +49,7 @@ document.querySelector("#app").innerHTML = /*html */ `
         </div>
 
         <div class="box">
-          <img src="src/assets/img/lowlight.jpg" class="img-box" />
+          <img src="${lowlightImg}" class="img-box" />
           <h3>Low-Light Enhancer</h3>
           <p>
             Brighten and restore photos taken in dark or poorly lit conditions. Shadows are lifted, hidden details are recovered, and exposure is balanced — giving your photo a natural, well-lit look without washing out colors.
@@ -53,7 +60,7 @@ document.querySelector("#app").innerHTML = /*html */ `
         </div>
 
         <div class="box">
-          <img src="src/assets/img/catbgblack.jpg" class="img-box" />
+          <img src="${catblackbgImg}" class="img-box" />
           <h3>Background Remover</h3>
           <p>
             Automatically detect and remove the background from any photo with precision. Whether it's a portrait, product shot, or object, the result is a clean, transparent cutout ready to be placed on any background you need.
