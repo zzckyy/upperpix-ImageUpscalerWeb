@@ -33,7 +33,7 @@
                     <button class="${e===`bgremove`?`active`:``}">Remove BG</button>
                 </a>
     </div>
-    `}document.addEventListener(`click`,e=>{let t=document.getElementById(`menuDiv`);e.target.id===`menu`&&t.classList.toggle(`hidden`)});var t=`/upperpix/assets/preview-BnZX9DRQ.jpg`,n=`/upperpix/assets/upscaled-B9FMcAT5.png`,r=`/upperpix/assets/cat-CRW63B4g.jpg`,i=`/upperpix/assets/lowlight-Cz1i1-Ih.jpg`,a=`/upperpix/assets/catbgblack-CGSXW21q.jpg`,o=`Upperpix`,s=`Make Your Photos Come Alive with`;document.querySelector(`#app`).innerHTML=`
+    `}document.addEventListener(`click`,e=>{let t=document.getElementById(`menuDiv`);e.target.id===`menu`&&t.classList.toggle(`hidden`)});var t=`/upperpix-ImageUpscalerWeb/assets/preview-BnZX9DRQ.jpg`,n=`/upperpix-ImageUpscalerWeb/assets/upscaled-B9FMcAT5.png`,r=`/upperpix-ImageUpscalerWeb/assets/cat-CRW63B4g.jpg`,i=`/upperpix-ImageUpscalerWeb/assets/lowlight-Cz1i1-Ih.jpg`,a=`/upperpix-ImageUpscalerWeb/assets/catbgblack-CGSXW21q.jpg`,o=`Upperpix`,s=`Make Your Photos Come Alive with`;document.querySelector(`#app`).innerHTML=`
   ${e()}
 
   <section class="">
