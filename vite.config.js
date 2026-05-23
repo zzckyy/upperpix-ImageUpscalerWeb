@@ -5,5 +5,16 @@ export default defineConfig(({ command }) => {
     base: command === 'build'
       ? '/upperpix-ImageUpscalerWeb/' // pas deploy
       : '/upperpix/', // pas dev
+
+    build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        lowlight: resolve(__dirname, 'lowlight.page.html'),
+        upscale: resolve(__dirname, 'upscale.page.html'),
+        bgremove: resolve(__dirname, 'bgremove.page.html'),
+      },
+    },
+  },
   }
 })
