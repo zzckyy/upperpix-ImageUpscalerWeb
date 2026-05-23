@@ -1,6 +1,6 @@
 import "../style.css";
 import "milligram";
-import { Navbar } from "../component/navbar";
+import Navbar from "../component/navbar";
 import { removeBackground } from "@imgly/background-removal";
 
 const brand = "Upperpix";

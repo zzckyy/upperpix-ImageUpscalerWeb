@@ -3,26 +3,13 @@ import javascriptLogo from "./assets/javascript.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "milligram";
+import Navbar from "./component/navbar.js"
 
 const brand = "Upperpix";
 const hero = `Make Your Photos Come Alive with`;
 
 document.querySelector("#app").innerHTML = /*html */ `
-  <nav class="navigation">
-    <div class="container navigation-container flex">
-      <div>
-        <a class="navigation-title" href="/">
-          <strong>${brand}</strong>
-        </a>
-      </div>
-
-      <div class="nav-btn-container">
-        <a href="src/pages/html/upscale.page.html"><button>Upscale</button></a>
-        <a href="src/pages/html/lowlight.page.html"><button>Low-Light</button></a>
-        <a href="src/pages/html/bgremove.page.html"><button>Remove BG</button></a>
-      </div>
-    </div>
-  </nav>
+  ${Navbar()}
 
   <section class="">
     <div class="hero">
@@ -47,7 +34,7 @@ document.querySelector("#app").innerHTML = /*html */ `
           <img src="src/assets/img/cat.jpg" class="img-box" />
           <h3>Upscaler</h3>
           <p>
-            Enlarge your photos without the blurry, pixelated results typical of standard resizing. Edges stay crisp, textures remain intact, and fine details are preserved — so your image looks sharp and clear even at twice the original size.
+            Enlarge your photos without the blurry, pixelated results typical of standard resizing. Your image will looks sharp and clear even at twice the original size without sacrifies the quality.
           </p>
           <div class="box-footer">
               <a href="src/pages/html/upscale.page.html">Upscale my image</a>
@@ -74,7 +61,7 @@ document.querySelector("#app").innerHTML = /*html */ `
               <a href="src/pages/html/bgremove.page.html">Low-Light Enhancement</a>
           </div>
         </div>
-        
+
       </main>
 
       <!-- Footer -->

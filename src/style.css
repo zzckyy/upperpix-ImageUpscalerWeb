@@ -249,6 +249,10 @@ input[type="file"]::file-selector-button {
     margin-bottom: 0;
 }
 
+.menu{
+    display: none;
+}
+
 @media (max-width: 600px) {
     .image-preview {
         width: 15dvh;
@@ -269,5 +273,9 @@ input[type="file"]::file-selector-button {
 
     .nav-btn-container {
         display: none;
+    }
+
+    .menu{
+        display: block;
     }
 }
