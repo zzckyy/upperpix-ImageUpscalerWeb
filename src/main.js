@@ -44,7 +44,7 @@ document.querySelector("#app").innerHTML = /*html */ `
             Enlarge your photos without the blurry, pixelated results typical of standard resizing. Your image will looks sharp and clear even at twice the original size without sacrifies the quality.
           </p>
           <div class="box-footer">
-              <a href="src/pages/html/upscale.page.html">Upscale my image</a>
+              <a href="upscale.page.html">Upscale my image</a>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ document.querySelector("#app").innerHTML = /*html */ `
             Brighten and restore photos taken in dark or poorly lit conditions. Shadows are lifted, hidden details are recovered, and exposure is balanced — giving your photo a natural, well-lit look without washing out colors.
           </p>
           <div class="box-footer">
-              <a href="src/pages/html/lowlight.page.html">Low-Light Enhancement</a>
+              <a href="lowlight.page.html">Low-Light Enhancement</a>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ document.querySelector("#app").innerHTML = /*html */ `
           <p>
             Automatically detect and remove the background from any photo with precision. Whether it's a portrait, product shot, or object, the result is a clean, transparent cutout ready to be placed on any background you need.
           <div class="box-footer">
-              <a href="src/pages/html/bgremove.page.html">Low-Light Enhancement</a>
+              <a href="bgremove.page.html">Low-Light Enhancement</a>
           </div>
         </div>
 
