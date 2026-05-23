@@ -1,7 +1,9 @@
-// vite.config.js
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
-export default {
-    base: "/upperpix/",
-}
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'build'
+      ? '/upperpix-ImageUpscalerWeb/' // pas deploy
+      : '/upperpix/', // pas dev
+  }
+})
