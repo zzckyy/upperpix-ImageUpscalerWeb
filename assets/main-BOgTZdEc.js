@@ -1,4 +1,4 @@
-import{t as e}from"./navbar-DqhfCCkG.js";var t=`/upperpix-ImageUpscalerWeb/assets/preview-CVX-ImXm.jpg`,n=`/upperpix-ImageUpscalerWeb/assets/upscaled-BOrHbwpZ.jpg`,r=`/upperpix-ImageUpscalerWeb/assets/cat-CofzmDtn.jpg`,i=`/upperpix-ImageUpscalerWeb/assets/lowlight-C8gM8x5F.jpg`,a=`/upperpix-ImageUpscalerWeb/assets/catbgblack-7rffrELw.jpg`,o=`Upperpix`,s=`Make Your Photos Come Alive with`;document.querySelector(`#app`).innerHTML=`
+import{t as e}from"./navbar-CfYrOutH.js";var t=`/upperpix-ImageUpscalerWeb/assets/preview-CVX-ImXm.jpg`,n=`/upperpix-ImageUpscalerWeb/assets/upscaled-BOrHbwpZ.jpg`,r=`/upperpix-ImageUpscalerWeb/assets/cat-CofzmDtn.jpg`,i=`/upperpix-ImageUpscalerWeb/assets/lowlight-BndxwjdT.jpg`,a=`/upperpix-ImageUpscalerWeb/assets/catbgblack-7rffrELw.jpg`,o=`Upperpix`,s=`Make Your Photos Come Alive with`;document.querySelector(`#app`).innerHTML=`
   ${e()}
 
   <section class="">
