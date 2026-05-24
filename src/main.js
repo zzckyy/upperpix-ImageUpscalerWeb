@@ -7,7 +7,7 @@ import Navbar from "./component/navbar.js"
 
 //gambar
 import previewImg from "./assets/img/preview.jpg"
-import upscaledImg from "./assets/img/upscaled.png"
+import upscaledImg from "./assets/img/upscaled.jpg"
 import catImg from "./assets/img/cat.jpg"
 import lowlightImg from "./assets/img/lowlight.jpg"
 import catblackbgImg from "./assets/img/catbgblack.jpg"
