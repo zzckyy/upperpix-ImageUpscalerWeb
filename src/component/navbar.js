@@ -12,8 +12,8 @@ export default function Navbar(activePage = "") {
                 <a href="/upperpix/upscale.page.html">
                     <button class="${activePage === "upscale" ? "active" : ""}">Upscale</button>
                 </a>
-                <a href="/upperpix/lowlight.page.html">
-                    <button class="${activePage === "lowlight" ? "active" : ""}">Low-Light</button>
+                <a href="/upperpix/compress.page.html">
+                    <button class="${activePage === "compress" ? "active" : ""}">Compress</button>
                 </a>
                 <a href="/upperpix/bgremove.page.html">
                     <button class="${activePage === "bgremove" ? "active" : ""}">Remove BG</button>
@@ -27,8 +27,8 @@ export default function Navbar(activePage = "") {
         <a href="/upperpix/upscale.page.html">
                     <button class="${activePage === "upscale" ? "active" : ""}">Upscale</button>
                 </a>
-                <a href="/upperpix/lowlight.page.html">
-                    <button class="${activePage === "lowlight" ? "active" : ""}">Low-Light</button>
+                <a href="/upperpix/compress.page.html">
+                    <button class="${activePage === "compress" ? "active" : ""}">Compress</button>
                 </a>
                 <a href="/upperpix/bgremove.page.html">
                     <button class="${activePage === "bgremove" ? "active" : ""}">Remove BG</button>
