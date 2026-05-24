@@ -10,7 +10,7 @@ document.querySelector("#app").innerHTML = /*html */ `
 
     <section class="">
         <div class="hero">
-            <h1 class="brand">LOW LIGHT</h1>
+            <h1 class="brand">COMPRESS</h1>
         </div>
         <div class="jumbotron">
             <div class="input-container">
