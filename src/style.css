@@ -186,7 +186,7 @@ li{
 .output-container, .input-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 50dvh;
     width: 50dvh;
@@ -204,7 +204,7 @@ li{
   border: 1px solid var(--accent1);
   border-radius: 16px;
   box-sizing: border-box;
-  background-image: url(assets/hero.png);
+  background-image: url(assets/img/placeholder.png);
   background-position: center;
   background-repeat: no-repeat;
   background-clip:border-box;
@@ -252,6 +252,13 @@ input[type="file"]::file-selector-button {
 
 .menu{
     display: none;
+}
+
+.processing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) {

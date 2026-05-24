@@ -22,7 +22,7 @@ document.querySelector("#app").innerHTML = /*html */ `
             <div class="output-container">
                 <p>UPSCALED</p>
                 <div class="output-skeleton" id="image-output"></div>
-                <a id="download"><button>Download Image</button></a>
+                <a id="download" class="hidden"><button>Download Image</button></a>
             </div>
         </div>
     </section>
@@ -43,43 +43,15 @@ const label = document.querySelector('#label-input');
 const output = document.querySelector('#image-output');
 const downloadBtn = document.querySelector('#download');
 
-// Sharpen kernel (unsharp mask 3x3)
-function applySharpening(ctx, w, h) {
-    const imageData = ctx.getImageData(0, 0, w, h);
-    const data = imageData.data;
-    const out = new Uint8ClampedArray(data);
-
-    const kernel = [
-         0, -1,  0,
-        -1,  5, -1,
-         0, -1,  0
-    ];
-
-    for (let y = 1; y < h - 1; y++) {
-        for (let x = 1; x < w - 1; x++) {
-            for (let c = 0; c < 3; c++) { // R, G, B
-                let val = 0;
-                for (let ky = -1; ky <= 1; ky++) {
-                    for (let kx = -1; kx <= 1; kx++) {
-                        const px = ((y + ky) * w + (x + kx)) * 4 + c;
-                        val += data[px] * kernel[(ky + 1) * 3 + (kx + 1)];
-                    }
-                }
-                out[(y * w + x) * 4 + c] = Math.min(255, Math.max(0, val));
-            }
-        }
-    }
-
-    ctx.putImageData(new ImageData(out, w, h), 0, 0);
-}
-
 input.addEventListener("change", async (e) => {
     const file = e.target.files[0];
-    if (!file) return;
+    if (!file) {downloadBtn.classList.add("hidden")};
 
     if (currentURL) URL.revokeObjectURL(currentURL);
     const url = URL.createObjectURL(file);
     currentURL = url;
+
+    downloadBtn.classList.remove("hidden");
 
     label.textContent = file.name;
     input.style.backgroundImage = `url(${url})`;
@@ -108,13 +80,10 @@ input.addEventListener("change", async (e) => {
     ctx.imageSmoothingQuality = "high";
     ctx.drawImage(image, 0, 0, w, h);
 
-    // Apply sharpening biar nggak blur setelah di-upscale
-    applySharpening(ctx, w, h);
-
-    const result = canvas.toDataURL("image/jpeg", 0.92);
+    const result = canvas.toDataURL("image/jpeg", 1.0);
 
     output.innerHTML = `<img src="${result}" class="image-output"/>`;
     downloadBtn.href = result;
-    downloadBtn.download = "upscaled.png";
+    downloadBtn.download = file.name + " " + "upscaled.png";
     downloadBtn.style.display = "block";
 });
